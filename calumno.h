@@ -8,10 +8,13 @@
 class cAlumno : public cPersona {
 private:
     int codigo;
+    int edad;
+    std::string carrera;
+    float promedio;
 
 public:
     cAlumno();
-    cAlumno(std::string n, int c);
+    cAlumno(std::string n, int c, int e, std::string carr, float p);
     void imprimir() override;
 
     void Salvar(std::fstream& out) override;
