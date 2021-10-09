@@ -8,17 +8,18 @@ cNodoInvertido::cNodoInvertido(int ai) {
     pSig = nullptr;
 }
 
-void cNodoInvertido::insertarAdelante(int ai, cObjeto* obj) {
+void cNodoInvertido::insertarNodoInvertido(int ai, cObjeto* obj) {
     cNodoInvertido* newNode = new cNodoInvertido(ai);
-    newNode->lst.insertarAlFinal(obj);
 
     newNode->pSig = this->pSig;
     newNode->pAnt = this;
     this->pSig = newNode;
     this->pSig->pSig->pAnt = newNode;
+
+    newNode->lst.insertarAlFinal(obj);
 }
 
-int cNodoInvertido::eliminarAdelante() {
+int cNodoInvertido::eliminarNodoInvertido() {
     int ai;
     ai = this->pSig->valorAI;
 
@@ -27,4 +28,12 @@ int cNodoInvertido::eliminarAdelante() {
     this->pSig->pAnt = this;
 
     return ai;
+}
+
+void cNodoInvertido::insertarElemento(cObjeto *obj) {
+    this->lst.insertarAlFinal(obj);
+}
+
+cObjeto *cNodoInvertido::eliminarElemento() {
+    return this->lst.eliminarAlFinal();
 }

@@ -16,8 +16,11 @@ public:
     cNodoInvertido();
     cNodoInvertido(int ai);
 
-    void insertarAdelante(int edad, cObjeto* obj);
-    int eliminarAdelante();
+    void insertarNodoInvertido(int edad, cObjeto* obj);
+    int eliminarNodoInvertido();
+
+    void insertarElemento(cObjeto* obj);
+    cObjeto* eliminarElemento();
 };
 
 #endif // CNODOINVERTIDO_H
