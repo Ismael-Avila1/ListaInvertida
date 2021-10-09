@@ -12,7 +12,6 @@ private:
     cNodoInvertido* pAnt;
     cNodoInvertido* pSig;
 
-public:
     cNodoInvertido();
     cNodoInvertido(int ai);
 
@@ -21,6 +20,9 @@ public:
 
     void insertarElemento(cObjeto* obj);
     cObjeto* eliminarElemento();
+
+    friend class cListaInvertida;
+    friend class cIteradorInvertido;
 };
 
 #endif // CNODOINVERTIDO_H
