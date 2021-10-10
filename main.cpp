@@ -1,11 +1,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <conio.h>
 
 #include "calumno.h"
 #include "clistainvertida.h"
 
 using namespace std;
+
+void insertarAlumno(cListaInvertida& lst);
 
 int main() {
 
@@ -36,14 +39,107 @@ int main() {
     lst.insertarElemento(19, al10);
     lst.insertarElemento(22, al11);
 
-    lst.imprimir();
+
+    int op;
+
+    do {
+        cout << "1. Insertar estudiante" << endl;
+        cout << "2. Buscar estudiantes" << endl;
+        cout << "3. Imprimir estudiantes" << endl;
+        cout << "0. Salir" << endl << endl;
+        cout << "\tIngresa una opcion: ";
+
+        cin >> op;
+
+        switch (op) {
+        case 1:
+            insertarAlumno(lst);
+            break;
+
+        case 2:
+            int edad;
+            cout << "\t\tIngresa la edad de los estudiantes a buscar: ";
+            cin >> edad;
+            lst.busqueda(edad);
+            cout << "\tPresiona <ENTER> para continuar..." << endl;
+            getch();
+            break;
+
+        case 3:
+            lst.imprimir();
+            cout << "\tPresiona <ENTER> para continuar..." << endl;
+            getch();
+            break;
+
+        case 0:
+            cout << "\n\tFin del Programa." << endl;
+            cout << "\tPresiona <ENTER> para continuar..." << endl;
+            getch();
+            break;
+
+        default:
+            system("cls");
+            break;
+        }
+
+        system("cls");
+    } while(op != 0);
 
     fstream salida("contenido.txt", ios_base::out);
     lst.Salvar(salida);
     salida.close();
 
-    lst.busqueda(22);
-
-
     return 0;
 }
+
+
+
+void insertarAlumno(cListaInvertida& lst) {
+    string nombre, carrera;
+    int op, codido, edad;
+    float promedio;
+
+    do {
+        cout << endl << "\t\tIngresa el nombre: ";
+        cin >> nombre;
+
+        cout << endl << "\t\tIngresa el codigo: ";
+        cin >> codido;
+
+        cout << endl << "\t\tIngresa la edad: ";
+        cin >> edad;
+
+        cout << endl << "\t\tIngresa la carrera: ";
+        cin >> carrera;
+
+        cout << endl << "\t\tIngresa el promedio: ";
+        cin >> promedio;
+
+        cAlumno* al = new cAlumno(nombre, codido, edad, carrera, promedio);
+        lst.insertarElemento(edad, al);
+
+        cout << endl << endl << "\t1. Insertar otro estudiante" << endl;
+        cout << "\t2. Salir" << endl;
+
+        cout << "\t\tIngresa una opcion: ";
+        cin >> op;
+
+        switch (op) {
+        case 1:
+            cout << "\n\n\tIngresa los datos de nuevo"<< endl;
+            cout << "\tPresiona <ENTER> para continuar..." << endl;
+            getch();
+            system("cls");
+            break;
+        case 2:
+            cout << "\n\tVolviendo al menu principal." << endl;
+            cout << "\tPresiona <ENTER> para continuar..." << endl;
+            getch();
+            break;
+        }
+
+    } while(op != 2);
+}
+
+
+
