@@ -14,13 +14,6 @@ private:
 public:
     cIteradorInvertido();
 
-    // Insertar y eliminar en la lista invertida
-    void insertarNodoInvertido(int ai, cObjeto* obj);
-    int eliminarNodoInvertido(); // Retorna el valor del atributo invertido
-
-    void insertarElemento(cObjeto* obj);
-
-
     // Sobrecarda de operadores
     void operator =(cIteradorInvertido& otro);
 
