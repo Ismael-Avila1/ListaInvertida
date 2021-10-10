@@ -1,6 +1,9 @@
 #include "cnodoinvertido.h"
 
-cNodoInvertido::cNodoInvertido() {}
+cNodoInvertido::cNodoInvertido() {
+    pAnt = nullptr;
+    pSig = nullptr;
+}
 
 cNodoInvertido::cNodoInvertido(int ai) {
     valorAI = ai;
