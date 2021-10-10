@@ -20,6 +20,11 @@ cListaInvertida::~cListaInvertida() {
 
 
 void cListaInvertida::insertarElemento(int ai, cObjeto *obj) {
+    if(isEmpty()) {
+        inicio.insertarNodoInvertido(ai, obj);
+        return;
+    }
+
     cIteradorInvertido it;
 
     for(it=this->begin(); it!=this->end(); it++)
