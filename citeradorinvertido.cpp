@@ -1,5 +1,9 @@
 #include "citeradorinvertido.h"
 
+void cIteradorInvertido::setNodo(cNodoInvertido *pNodo) {
+    pActual = pNodo;
+}
+
 cIteradorInvertido::cIteradorInvertido() {}
 
 void cIteradorInvertido::insertarNodoInvertido(int ai, cObjeto *obj) {
@@ -12,10 +16,6 @@ int cIteradorInvertido::eliminarNodoInvertido() {
 
 void cIteradorInvertido::insertarElemento(cObjeto *obj) {
     pActual->insertarElemento(obj);
-}
-
-cObjeto *cIteradorInvertido::eliminarElemento() {
-    return pActual->eliminarElemento();
 }
 
 

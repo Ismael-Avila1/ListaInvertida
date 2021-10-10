@@ -33,7 +33,3 @@ int cNodoInvertido::eliminarNodoInvertido() {
 void cNodoInvertido::insertarElemento(cObjeto *obj) {
     this->lst.insertarAlFinal(obj);
 }
-
-cObjeto *cNodoInvertido::eliminarElemento() {
-    return this->lst.eliminarAlFinal();
-}

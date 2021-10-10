@@ -19,7 +19,6 @@ public:
     int eliminarNodoInvertido(); // Retorna el valor del atributo invertido
 
     void insertarElemento(cObjeto* obj);
-    cObjeto* eliminarElemento();
 
 
     // Sobrecarda de operadores

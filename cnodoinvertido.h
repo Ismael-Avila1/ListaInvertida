@@ -19,7 +19,6 @@ private:
     int eliminarNodoInvertido();
 
     void insertarElemento(cObjeto* obj);
-    cObjeto* eliminarElemento();
 
     friend class cListaInvertida;
     friend class cIteradorInvertido;
